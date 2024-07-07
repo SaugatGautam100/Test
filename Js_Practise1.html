@@ -1,0 +1,293 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="JS1s.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <style>
+        .toggle{
+            display: flex;
+        }
+        #box{
+            display: inline;
+            margin-left: 50px;
+            border: 2px solid white;
+            background-color: orange;
+            width: 70px;
+            margin-right: 400px;
+            padding-left: 10px;
+        }
+        #box button:hover{
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+
+        }
+        #box button{
+            margin-top: 10px;
+            background-color: orange;
+            border-color: white;
+            color: white;
+        }
+        #box i{
+            cursor: pointer;
+        }
+        #box i:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    
+   <form action="connect.php" method="post">
+    <input type="text" name="name" id="">
+    <input type="email" name="email" id="">
+    <button type="submit">Submit</button>
+   </form>
+    <div class="toggle">
+
+        <button onclick="Open()">Open</button>
+        <div  id="box">
+            <button>Long</button>
+            <i onclick="Close()" class="fa-solid fa-xmark" id="close"></i>
+       <br>
+       <button>Shorts</button>
+       <br>
+       <button>Post</button>
+        </div>
+        <script>
+            function Close(){
+                const c = document.getElementById("box");
+                c.style.display = "none";
+            }
+           function Open(){
+               const open = document.getElementById("box");
+               if(open.style.display==="none"){
+                   open.style.display="block";
+               }
+               else{
+                   open.style.display="none";
+               }
+           }
+        </script>
+        <script>
+           window.onload = function() {
+               document.getElementById('box').style.display = 'none';
+           };
+       </script>
+          
+    </div>
+
+  
+    <a href="#" onclick="alert('Welcome!');">Click For Welcome</a>
+    <form action="">
+        <input type="button" value="Result" onclick="display()" name="" id="">
+        <script>
+            function display(){
+                alert('Are you clicking the button');
+            }
+        </script>
+    </form>
+    <p id="web">class 10</p>
+    <script>
+        const paragraph = document.getElementById("web");
+        console.log("The Selected Elwment Is" +paragraph);
+            </script>
+            <!--Tested By Me-->
+            <input type="text" id="input" name="" id="">
+            <button onclick="Hello()">Click To test</button>
+            <script>
+                function Hello(){
+
+                    const it = document.getElementById("input").value;
+                    alert("The Written Word is " + it)
+                }
+            </script>
+            <div class="web">class</div>
+            <div class="web">10</div>
+            <div class="web">web designing</div>
+            <script>
+                const divs = document.getElementsByClassName("Geeks For Geeks");
+                console.log(divs);
+                console.log(divs[3]);
+            </script>
+            <input type="text" placeholder="Text" name="web">
+            <input type="number" placeholder="Number" name="web">
+            <script>
+                const inputs = document.getElementsByName("web");
+                console.log(inputs);
+                console.log(inputs[1]);
+            </script>
+            <p>for</p>
+            <p>class</p>
+            <p>ten</p>
+          
+            <script>
+                const p = document.getElementsByTagName("p");
+                console.log(p);
+                console.log(p[2]);
+            </script>
+            <div class="gfg">web technology</div>
+            <p>Class 10</p>
+            <p id="para">For</p>
+            <p>web</p>
+            
+            <script>
+            const gfg = document.querySelector(".gfg");
+            const firstparagraph = document.querySelector("p");
+            const secondparagraph = document.querySelector("#para");
+            console.log(gfg, firstparagraph, secondparagraph);
+            </script>
+            <div class="gfg">Let's learn</div>
+            <div class="gfg">class</div>
+            <div class="gfg">nine</div>
+            <div class="gfg">web</div>
+            <p>Let's learn web technology</p>
+            <script>
+                const div = document.querySelectorAll(".gfg");
+                console.log(divs);
+            </script>
+            <p id="change">Hello</p>
+            <script>
+                var change = document.getElementById("change");
+                change.style.background="yellow ";
+            </script>
+            <input type="number" id="n1">
+            <input type="number" id="n2">
+            <button onclick="sum()">Click To Sum</button>
+            <p id="result"></p>
+            <script>
+                function sum(){
+                    const n1 = parseFloat(document.getElementById("n1").value); 
+                    const n2 = parseFloat(document.getElementById("n2").value);
+                    const sum = n1 + n2;
+                   document.getElementById("result").innerText = "The Sum is " + sum; 
+                }
+            </script>
+            <!--Calculator-->
+            <h2>Calculator:</h2>
+            <input type="number" id="num1">
+            <input type="number" id="num2">
+            <br>
+            <button onclick="Sum1()">Sum</button>
+            <button onclick="Sub()">Sub</button>
+            <button onclick="Div()">Div</button>
+            <button onclick="Mul()">Mul</button>
+            <br>
+            <button onclick="Clear()">Clear</button>
+            <p id="result1"></p>
+<script>
+     function Clear(){
+       
+        document.getElementById("result1").innerText = "";
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+    }
+    function Sum1(){
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const sum = num1 + num2;
+        document.getElementById("result1").innerText = "Sum of The Numbers Is " + sum;
+    }
+     function Sub(){
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const sub = num1 - num2;
+        document.getElementById("result1").innerText = "Sub of The Numbers Is " + sub;
+    }
+     function Div(){
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const div = num1 / num2;
+        document.getElementById("result1").innerText = "Div of The Numbers Is " + div;
+    }
+     function Mul(){
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const Mul = num1 * num2;
+        document.getElementById("result1").innerText = "Mul of The Numbers Is " + Mul;
+    }
+</script>
+<input type="number" placeholder="Enter First Number" id="nu1">
+<input type="number" placeholder="Enter Second Number" id="nu2">
+<button onclick="Check()">Check</button>\
+<script>
+    function Check(){
+        const nu1 = parseFloat(document.getElementById("nu1").value);
+        const nu2 = parseFloat(document.getElementById("nu2").value);
+        if(nu1>nu2){
+            alert("The Number One is Greater");
+        }
+        else{
+             alert("The Number Two is Greater");
+        }
+    }
+</script>
+<br>
+     <input type="text" placeholder="Write Text(A-F)" id="grade">
+     <button onclick="checkt()">Check</button>
+     <script>
+        function checkt(){
+            var grade =document.getElementById("grade").value;
+            document.write("");
+            switch (grade){
+                case 'A':document.write(" Good Job! <br/>");
+                break;
+                 case 'B':document.write(" Pretty Good Job! <br/>");
+                break;
+                 case 'C':document.write("Average <br/>");
+                break;
+                 case 'D':document.write(" Below avg <br/>");
+                break;
+                 case 'E':document.write(" Just Pass <br/>");
+                break;
+                 case 'F':document.write(" Fail! <br/>");
+                break;
+                default: document.write("Unknown grade <br/r>")
+            }
+            document.write("");
+        }
+     </script>    
+     <br>  
+     <input type="button" value="Click me To Check Prompt" onclick="fun()">
+     <script>
+        function fun(){
+            prompt("This Is An Prompt");
+        }
+     </script> 
+     <input type="button" value="Click me to test Confirmation Dialog bOx" onclick="getConformation()">
+     <script>
+        function getConformation(){
+            var retVal = confirm("Do You Want To Continue?");
+            if(retVal==true){
+                document.write("User wants to continue!");
+                returntrue;
+            }
+            else{
+                document.write("User does not wants to continue");
+                returnfalse;
+            }
+        }
+     </script>
+<button onclick="opendiv()" id="Open">Upload</button>
+<div  id="container">
+    <button>Video</button>
+    <button>Shorts</button>
+    <button>Story</button>
+    <button>Post</button>
+</div>
+<script>
+    function opendiv(){
+      var container = document.getElementById("container");
+     
+       if (container.style.display === "block") {
+    container.style.display = "none";
+  } else {
+    container.style.display = "block";
+  }
+}
+       
+    
+</script>
+</body>
+</html>
